@@ -1,13 +1,22 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Link href="/users">Users</Link>
+
+      <button onClick={() => router.push('/users/1')}>
+        Click here to read more
+      </button>
 
       <main>
         <h1 className={styles.title}>
